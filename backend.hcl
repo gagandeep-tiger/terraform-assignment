@@ -1,3 +1,3 @@
-resource_group_name = "mle-cloud-training"
-storage_account_name = "demox9k8b"
-container_name = "demo-tfstate"
+resource_group_name = mle-cloud-training
+storage_account_name = demoe8v2p
+container_name = demo-tfstate

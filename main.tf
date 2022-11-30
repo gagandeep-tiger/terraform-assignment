@@ -8,6 +8,9 @@ terraform {
   }
   backend "azurerm" {
     key = "global/storage/terraform.tfstate"
+    resource_group_name = "mle-cloud-training"
+    storage_account_name = "demoe8v2p"
+    container_name = "demo-tfstate"
   }
 }
 
@@ -31,13 +34,6 @@ resource "azurerm_storage_account" "demo-storage" {
   account_replication_type = "LRS"
 
   tags = var.tags
-}
-
-resource "azurerm_subnet" "demo-subnet" {
-  name = "${var.prefix}-subnet"
-  virtual_network_name = data.azurerm_virtual_network.demo.name
-  resource_group_name = data.azurerm_resource_group.demo.name
-  address_prefixes = [ "10.0.1.0/24" ]
 }
 
 resource "azurerm_storage_container" "demo-container" {
